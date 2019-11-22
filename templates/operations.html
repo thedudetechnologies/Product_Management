@@ -1,7 +1,7 @@
 {% extends 'top.html' %}
 
 
-{% block title %} Add Product {% endblock %}
+{% block title %} Product Table {% endblock %}
 
 {%block address %}
   <!-- Breadcrumbs-->
@@ -9,7 +9,7 @@
     <li class="breadcrumb-item">
       <a href="{% url 'index' %}">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active">Table</li>
+    <li class="breadcrumb-item active"> Product Table</li>
   </ol>
 {% endblock %}
 
@@ -39,8 +39,8 @@
                             <tr>
                               <td>{{i.id}}</td>
                               <td>{{i.product_name}}</td>
-                              <td><img src="../media/{{i.image}}" height="100px" width="200px"></td>
-                              <td>{{i.category.name}}</td>
+                              <td><img src="{{MEDIA_URL}}/{{i.image}}" height="100px" width="200px"></td>
+                              <td>{{i.category}}</td>
                               <td>{{i.description}}</td>
                               <td><button value="{{i.id}}" id="update" >Update</button></td>
                               <td><button value="{{i.id}}" id="delete">Delete</button></td>

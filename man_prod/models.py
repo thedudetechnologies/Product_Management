@@ -7,8 +7,8 @@ class Category(models.Model):
 class Product(models.Model):
 
    product_name = models.CharField(max_length = 50)
-   image = models.ImageField(upload_to = 'images/',blank=True,help_text="not found")
-   category = models.ManyToManyField(Category)
+   image = models.ImageField(upload_to = 'static/images/',blank=True,help_text="not found")
+   category = models.CharField(max_length = 50)
    description = models.TextField()
    created_at = models.DateTimeField(auto_now=True)
    updated_at = models.DateTimeField(auto_now=True)
